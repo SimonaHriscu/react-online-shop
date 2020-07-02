@@ -1,0 +1,173 @@
+
+// <<<---- Nav ---->>>
+
+nav {
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  
+    @include respond(phone) {
+      height: 30vh;
+      flex-direction: column;
+    }
+  
+    //Logo
+    .logo {
+      width: 25vw;
+      height: 10vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      font-family: "Caveat", cursive;
+  
+      @include respond(phone) {
+        width: 55vw;
+        height: 15vh;
+      }
+  
+      p {
+        width: 20vw;
+        height: 7vh;
+        font-size: 3.5vw;
+        color: #f86e6e;
+        cursor: pointer;
+        // color: #FD933A;
+  
+        @include respond(phone) {
+          width: 40vw;
+          height: 10vh;
+          font-size: 12vw;
+        }
+  
+      }
+    }
+  
+    //Filters box
+    .filters-box {
+      width: 45vw;
+      height: 10vh;
+      display: flex;
+      flex-direction: column;
+  
+      @include respond(phone) {
+        width: 75vw;
+        height: 7vh;
+        align-items: center;
+      }
+    
+  
+      .title {
+        width: 11vw;
+        height: 5vh;
+        font-size: 1vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        color: #a6a6a5;
+  
+        @include respond(phone) {
+          display: none;
+        }
+    
+      }
+  
+      .filters {
+        width: 34vw;
+        height: 5vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-end;
+  
+        .filter1,
+        .filter2,
+        .filter3 {
+          height: fit-content;
+          padding: 0.5rem;
+         // background-color: rgba(248, 110, 110, 0.164);
+          border-radius: 1rem;
+          cursor: pointer;
+        }
+  
+        @include respond(phone) {
+          width: 65vw;
+          height: 7vh;
+        }
+       
+  
+        & > * {
+          font-size: 1.2vw;
+  
+          @include respond(phone) {
+            font-size: 2.7vw;
+          }
+         
+          &:last-of-type {
+            color: #a6a6a5;
+          }
+        }
+      }
+    }
+    //Cart Box
+    .cart {
+      width: 15vw;
+      height: fit-content;
+      padding: 0.5rem;
+      // background-color: rgba(248, 110, 110, 0.164);
+      border-radius: 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+  
+      @include respond(phone) {
+        width: 55vw;
+        height: fit-content;
+        background-color: rgba(248, 110, 110, 0.164);
+      }
+      
+  
+      .fa-concierge-bell {
+        font-size: 1.8vw;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        color: #f86e6e;
+  
+        @include respond(phone) {
+          font-size: 3.8vw;
+        }
+        
+      }
+  
+      .order-status {
+        font-size: 1.2vw;
+        font-weight: bold;
+  
+        @include respond(phone) {
+          font-size: 2.8vw;
+        }
+       
+      }
+  
+      .items-no {
+        width: 2.1vw;
+        height: 4vh;
+        font-size: 1.4vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 100%;
+        border: 1px solid #f86e6e;
+  
+        @include respond(phone) {
+          width: 4.1vw;
+          height: 2.5vh;
+          font-size: 2.4vw;
+        }
+       
+      }
+    }
+  }

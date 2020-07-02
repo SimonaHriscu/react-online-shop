@@ -1,0 +1,98 @@
+// your scss files should import here 💪🏻
+
+@import "_mixins.scss";
+@import "../components/header/_header";
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Roboto+Slab:wght@200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap");
+
+*,
+*:before,
+*:after,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  color: #20201e;
+  font-family: "Roboto Slab", serif;
+
+  #root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #20201e;
+
+    .container {
+      width: 100vw;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1{
+      margin: 5vh 0;
+    }
+    input{
+      border: none;
+      border-bottom: 1px solid gray ;
+      font-size: 1.2vw;
+      &:focus{
+        outline: none;
+    }
+    }
+    [value = Search]{
+      background-color: transparent;
+      font-size: 1.2vw;
+      color: #f86e6e;
+      font-weight: bold;
+      //border: none;
+
+    }
+    ul{
+      margin-top: 5vh;
+      width: 60vw;
+      height: 40vh;
+      //background-color: lightpink;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      
+    }
+
+    li {
+      // width: 10vw;
+      // height: 15vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      list-style: none;
+    }
+    button {
+      background-color: #FFE18E;
+      border: none;
+      height: 3vh;
+      width: 7vw;
+      
+    }
+    h5 {
+      color: red;
+    }
+    i {
+      font-size: 2rem;
+    }
+    .checkout {
+      width: 30vw;
+      height: 30vh;
+      background-color: lightpink;
+      position: relative;
+      left: 30vw;
+      bottom: 50vh;
+    }
+  }
+}

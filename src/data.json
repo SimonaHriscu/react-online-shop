@@ -1,0 +1,86 @@
+[
+  {
+    "id": 0,
+    "productName": "apple",
+    "icon": "🍏",
+    "price": 3,
+    "inventory": 10
+  },
+  {
+    "id": 1,
+    "productName": "watermelon",
+    "icon": "🍉",
+    "price": 0,
+    "inventory": 3
+  },
+  {
+    "id": 2,
+    "productName": "pizza",
+    "icon": "🍕",
+    "price": 10,
+    "inventory": 100
+  },
+  {
+    "id": 3,
+    "productName": "salad",
+    "icon": "🥗",
+    "price": 40,
+    "inventory": 0
+  },
+  {
+    "id": 4,
+    "productName": "ice cream",
+    "icon": "🍦",
+    "price": 7,
+    "inventory": 66
+  },
+  {
+    "id": 5,
+    "productName": "soup",
+    "icon": "🍲",
+    "price": 25,
+    "inventory": 5
+  },
+  {
+    "id": 6,
+    "productName": "hot-dog",
+    "icon": "🌭",
+    "price": 15,
+    "inventory": 3
+  },
+  {
+    "id": 7,
+    "productName": "burrito",
+    "icon": "🌯",
+    "price": 12,
+    "inventory": 7
+  },
+  {
+    "id": 8,
+    "productName": "taco",
+    "icon": "🌮",
+    "price": 16,
+    "inventory": 3
+  },
+  {
+    "id": 9,
+    "productName": "water",
+    "icon": "🍶",
+    "price": 4,
+    "inventory": 40
+  },
+  {
+    "id": 10,
+    "productName": "wine",
+    "icon": "🍷",
+    "price": 8,
+    "inventory": 2
+  },
+  {
+    "id": 11,
+    "productName": "sushi",
+    "icon": "🍣",
+    "price": 32,
+    "inventory": 6
+  }
+]

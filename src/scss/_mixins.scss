@@ -1,0 +1,25 @@
+/*
+$breakpoint argument choices:
+-phone max 600px;
+-600-900 tablet portrait;
+-900-1200 tablet landscape
+-1200-1800 laptop;
+-over 1800 big desktop
+
+
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+    @media (max-width: 600px) {
+      @content;
+      }
+    }
+  
+  //   @if $breakpoint == tablet {
+  //     @media (min-width: 601px) {
+  //       @content;
+  
+  //   }
+  // }
+  }
