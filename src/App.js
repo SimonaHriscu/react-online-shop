@@ -14,8 +14,8 @@ export default class App extends Component {
       showProducts: true,
     };
   }
-  
-// Filter button under 10$
+
+  // Filter button under 10$
   filterUnderTenHandle = (e) => {
     e.preventDefault();
 
@@ -24,14 +24,15 @@ export default class App extends Component {
         return item;
       }
     });
-    console.log(newArr);
+
     this.setState({
       searchData: newArr,
+      showProducts: false,
     });
   };
 
-//Filter button over 10$
-  filterOverTenHandle= (e) => {
+  //Filter button over 10$
+  filterOverTenHandle = (e) => {
     e.preventDefault();
     let newArr = this.state.data.filter((item) => {
       if (item.price > 10) {
@@ -40,32 +41,25 @@ export default class App extends Component {
     });
     this.setState({
       searchData: newArr,
-      showProducts:false,
+      showProducts: false,
     });
   };
 
-//  filter button show ALL items
+  //  filter button show ALL items
   showAllHandle = (e) => {
     e.preventDefault();
-    let newArr = this.state.data.filter((item) => {
-       return item;
-    });
     this.setState({
-      searchData: newArr,
+      showProducts: true,
     });
   };
-  
-  //no of items in the cart
-  cartNumHandle = (prevState) => {
 
-    this.setState(prevState => {
-      return {cartItems: prevState.cartItems ++}
-   })
+  //number of items in the cart
+  cartNumHandle = (prevState) => {
+    this.setState((prevState) => {
+      return { cartItems: prevState.cartItems++ };
+    });
     console.log(this.state.cartItems);
   };
-
-
-  
 
   changeHandle = (e) => {
     // console.log(e.target.value.trim())
@@ -88,15 +82,15 @@ export default class App extends Component {
     });
   };
 
-  
   render() {
     return (
       <React.Fragment>
-        <Header filterUnderTen={this.filterUnderTenHandle }
-        filterOverTen = {this.filterOverTenHandle}
-        showAll = {this.showAllHandle}
-        cartItem ={this.state.cartItems}
-       />
+        <Header
+          filterUnderTen={this.filterUnderTenHandle}
+          filterOverTen={this.filterOverTenHandle}
+          showAll={this.showAllHandle}
+          cartItem={this.state.cartItems}
+        />
         <div className="container">
           <h1>Welcome to our online store</h1>
           <form onKeyUp={this.submitHandle}>
@@ -107,16 +101,17 @@ export default class App extends Component {
             />
             <input type="submit" value="Search" />
           </form>
-          
+
           <ProductList
             data={this.state.data}
             data={
               this.state.userInput ? this.state.searchData : this.state.data
             }
-            
-             filteredData={this.state.searchData ? this.state.searchData: this.state.data}
-             cartItem = {this.cartNumHandle}
-             showProducts = {this.state.showProducts}
+            filteredData={
+              this.state.searchData ? this.state.searchData : this.state.data
+            }
+            cartItem={this.cartNumHandle}
+            showProducts={this.state.showProducts}
           />
         </div>
       </React.Fragment>

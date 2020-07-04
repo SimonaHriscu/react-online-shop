@@ -2,7 +2,6 @@ import React from "react";
 import ProductItem from "./ProductItem";
 
 const ProductList = (props) => {
-  console.log(props.filteredData);
   const items = props.data.map((item, i) => {
     return <ProductItem key={i} info={item} cartItem={props.cartItem} />;
   });
@@ -12,7 +11,7 @@ const ProductList = (props) => {
 
   return (
     <React.Fragment>
-      {props.showProducts ? <ul>{items}</ul> : <ul>{filteredData}</ul>}
+      {props.showProducts ? <ul>{items}</ul> : <ul>{filteredData}</ul> }
     </React.Fragment>
   );
 };
