@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Data from "./data.json";
 import Header from "./components/header/Header";
 import ProductList from "./components/ProductList";
-
+import Total from './components/total/Total'
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -12,6 +12,7 @@ export default class App extends Component {
       searchData: [],
       cartItems: 0,
       showProducts: true,
+      price:0,
     };
   }
 
@@ -102,6 +103,7 @@ export default class App extends Component {
             <input type="submit" value="Search" />
           </form>
 
+         
           <ProductList
             data={this.state.data}
             data={
@@ -112,7 +114,9 @@ export default class App extends Component {
             }
             cartItem={this.cartNumHandle}
             showProducts={this.state.showProducts}
+            itemInfo = {this.itemInfoHandle}
           />
+           <Total/>
         </div>
       </React.Fragment>
     );
