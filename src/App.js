@@ -11,6 +11,7 @@ export default class App extends Component {
       data: Data,
       searchData: [],
       cartItems: 0,
+      showProducts: true,
     };
   }
   
@@ -39,6 +40,7 @@ export default class App extends Component {
     });
     this.setState({
       searchData: newArr,
+      showProducts:false,
     });
   };
 
@@ -105,13 +107,16 @@ export default class App extends Component {
             />
             <input type="submit" value="Search" />
           </form>
+          
           <ProductList
             data={this.state.data}
             data={
               this.state.userInput ? this.state.searchData : this.state.data
             }
-            data={this.state.searchData ? this.state.searchData: this.state.data}
-            cartItem = {this.cartNumHandle}
+            
+             filteredData={this.state.searchData ? this.state.searchData: this.state.data}
+             cartItem = {this.cartNumHandle}
+             showProducts = {this.state.showProducts}
           />
         </div>
       </React.Fragment>
