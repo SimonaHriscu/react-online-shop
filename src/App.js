@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import Data from "./data.json";
 import Header from "./components/header/Header";
 import ProductList from "./components/ProductList";
-import Total from './components/total/Total'
+import Total from './components/total/Total';
+
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -57,9 +59,9 @@ export default class App extends Component {
   //number of items in the cart
   cartNumHandle = (prevState) => {
     this.setState((prevState) => {
-      return { cartItems: prevState.cartItems++ };
+      return { cartItems: prevState.cartItems+1 };
     });
-    console.log(this.state.cartItems);
+   // console.log(this.state.cartItems);
   };
 
   changeHandle = (e) => {

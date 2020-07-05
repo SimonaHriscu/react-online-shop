@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Total =(props)=>{
-    console.log(props.itemInfo)
+   // console.log(props.itemInfo)
    
 return(
-    <div className="total">{props.itemInfo}</div>
+    <div className="total">This is total{props.itemInfo}</div>
 )
 
 }
