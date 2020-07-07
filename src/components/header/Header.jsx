@@ -1,6 +1,7 @@
 import React from "react";
 
 const Header = (props) => {
+  console.log(props.showCart);
   return (
     <nav>
       <div className="logo">
@@ -10,13 +11,19 @@ const Header = (props) => {
       <div className="filters-box">
         <div className="title">Filters</div>
         <div className="filters">
-          <div className="filter1" onClick={props.filterUnderTen}>#0-10 $</div>
-          <div className="filter2" onClick={props.filterOverTen}>#over 10 $</div>
-          <div className="filter3" onClick={props.showAll}>ALL</div>
+          <div className="filter1" onClick={props.filterUnderTen}>
+            #0-10 $
+          </div>
+          <div className="filter2" onClick={props.filterOverTen}>
+            #over 10 $
+          </div>
+          <div className="filter3" onClick={props.showAll}>
+            ALL
+          </div>
         </div>
       </div>
 
-      <div className="cart">
+      <div className="cart" onClick={props.showCart}>
         <i className="fas fa-concierge-bell"></i>
         <div className="order-status">ORDER STATUS</div>
         <div className="items-no">{props.cartItem}</div>
@@ -25,4 +32,4 @@ const Header = (props) => {
   );
 };
 
-export default Header
+export default Header;
