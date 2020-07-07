@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import Data from "./data.json";
 import Header from "./components/header/Header";
-import ProductList from "./components/ProductList";
-import Total from './components/total/Total';
-
+import ProductList from "./components/productList/ProductList";
+import Total from "./components/total/Total";
 
 export default class App extends Component {
   constructor(props) {
@@ -14,7 +13,9 @@ export default class App extends Component {
       searchData: [],
       cartItems: 0,
       showProducts: true,
-      price:0,
+      price: 0,
+      productList: [],
+      showCart: false,
     };
   }
 
@@ -57,11 +58,29 @@ export default class App extends Component {
   };
 
   //number of items in the cart
-  cartNumHandle = (prevState) => {
+  cartNumHandle = (info, prevState) => {
+    //e.preventDefault();
+    let array = [];
+    let price = info.price;
+    array.push(price);
+    // console.log(info.productName)
+
     this.setState((prevState) => {
-      return { cartItems: prevState.cartItems+1 };
+      return {
+        cartItems: prevState.cartItems + 1,
+        price: prevState.price + price,
+        productList: prevState.productList.concat(info),
+      };
     });
-   // console.log(this.state.cartItems);
+    // console.log(this.state.productList);
+  };
+
+  //Show the cart
+  showCartHandle = (e) => {
+    e.preventDefault();
+    this.setState({
+      showCart: !this.state.showCart,
+    });
   };
 
   changeHandle = (e) => {
@@ -93,6 +112,7 @@ export default class App extends Component {
           filterOverTen={this.filterOverTenHandle}
           showAll={this.showAllHandle}
           cartItem={this.state.cartItems}
+          showCart={this.showCartHandle}
         />
         <div className="container">
           <h1>Welcome to our online store</h1>
@@ -105,7 +125,6 @@ export default class App extends Component {
             <input type="submit" value="Search" />
           </form>
 
-         
           <ProductList
             data={this.state.data}
             data={
@@ -116,9 +135,15 @@ export default class App extends Component {
             }
             cartItem={this.cartNumHandle}
             showProducts={this.state.showProducts}
-            itemInfo = {this.itemInfoHandle}
+            itemInfo={this.itemInfoHandle}
+            cartPriceHandle={this.cartPriceHandle}
           />
-           <Total/>
+          <Total
+            cartPriceHandle={this.state.cartItems}
+            price={this.state.price}
+            products={this.state.productList}
+            showCart={this.state.showCart}
+          />
         </div>
       </React.Fragment>
     );
