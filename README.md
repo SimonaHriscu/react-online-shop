@@ -1,5 +1,56 @@
-# Online shopping with React
+# Online shop built with React
 
+* filters added by price;
+* functional search bar;
+* number of Items in the Cart;
+* functional Cart;
+
+## Preview:
+
+![Imgur](https://i.imgur.com/pY8d8nH.png)
+
+* Cart view:
+
+![Imgur](https://i.imgur.com/s44YzeD.png)
+
+## Structure
+
+```
+Project
+│   README.md
+│   package.json
+|   package-lock.json
+|
+└─── public
+│      │
+│      └─── index.html
+|      └─── images
+|
+|
+└─── src
+      └─── index.js
+      └─── App.js
+      │
+      └─── components
+      │        └─── header
+      |        |        └─── Header.jsx
+      |        |        └─── _header.scss
+      |        └─── icons
+      |        └─── ProductItem
+      |                 └─── ProductItem.jsx
+      │        └─── ProductList
+      |                 └─── ProductList.jsx
+      │        └─── total
+      |                 └─── Total.jsx
+      |                 └─── _total.scss
+      └─── scss
+      │        └─── main.scss
+      │        └─── _mixins.scss
+      |
+      └─── data.json
+  
+               
+``` 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
