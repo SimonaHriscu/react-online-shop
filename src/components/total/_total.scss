@@ -1,7 +1,49 @@
 
-
 .total{
     width: 20vw;
-    height: 50vh;
-    background-color: pink;
+    height: 70vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left:37vw;
+    bottom: 75vh;
+    h3{
+        margin: 2vh 0;
+        height: 5vh;
+    }
+    p{
+        margin: 2vh 0;
+    }
+    .cart-products{
+        width: 18vw;
+        height: 60vh;
+        list-style: none;
+        margin:1vh 0 3vh 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+        &:hover {
+          overflow-y: scroll;
+        }
+        &::-webkit-scrollbar {
+          width: 0.2em;
+        }
+        &::-webkit-scrollbar {
+          -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        }
+        &::-webkit-scrollbar-thumb {
+          background-color: #204051;
+          outline: 1px solid rgb(53, 47, 47);
+        }
+    
+         li{
+            width: 15vw;
+            height:5vh;
+           font-size: 1vw;
+         display: flex;
+         justify-content: space-between;
+        }
+    }
 }
