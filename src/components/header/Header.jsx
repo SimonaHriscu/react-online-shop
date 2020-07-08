@@ -1,7 +1,7 @@
 import React from "react";
 
 const Header = (props) => {
-  console.log(props.showCart);
+ // console.log(props.showCart);
   return (
     <nav>
       <div className="logo">

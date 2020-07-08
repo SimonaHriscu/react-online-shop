@@ -59,11 +59,9 @@ export default class App extends Component {
 
   //number of items in the cart
   cartNumHandle = (info, prevState) => {
-    //e.preventDefault();
     let array = [];
     let price = info.price;
     array.push(price);
-    // console.log(info.productName)
 
     this.setState((prevState) => {
       return {
@@ -72,7 +70,35 @@ export default class App extends Component {
         productList: prevState.productList.concat(info),
       };
     });
-    // console.log(this.state.productList);
+  };
+
+  //remove item
+  removeItemHandle = (itemToRemove, prevState) => {
+    const items = this.state.productList;
+    let array = [];
+    let price = itemToRemove.price;
+    array.push(array);
+    const newArr = items.filter((item) => item !== itemToRemove);
+    this.setState((prevState) => {
+      return {
+        cartItems: prevState.cartItems - 1,
+        price: prevState.price - price,
+        productList: newArr,
+      };
+    });
+  };
+
+  //reset the Cart
+  resetCartHandle = (items, prevState) => {
+    let emptyArr = items.splice(0, items);
+
+    this.setState((prevState) => {
+      return {
+        cartItems: prevState.cartItems - this.state.cartItems,
+        price: prevState.price - this.state.price,
+        productList: emptyArr,
+      };
+    });
   };
 
   //Show the cart
@@ -84,7 +110,6 @@ export default class App extends Component {
   };
 
   changeHandle = (e) => {
-    // console.log(e.target.value.trim())
     this.setState({
       userInput: e.target.value.trim(),
     });
@@ -143,6 +168,8 @@ export default class App extends Component {
             price={this.state.price}
             products={this.state.productList}
             showCart={this.state.showCart}
+            del={this.removeItemHandle}
+            reset={this.resetCartHandle}
           />
         </div>
       </React.Fragment>
