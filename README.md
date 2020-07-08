@@ -1,9 +1,12 @@
 # Online shop built with React
 
-* filters added by price;
+* filter under 10$;
+* filter over 10$;
 * functional search bar;
 * number of Items in the Cart;
 * functional Cart;
+* delete Item button in the Cart;
+* reset Cart button.
 
 ## Preview:
 
@@ -11,7 +14,10 @@
 
 * Cart view:
 
-![Imgur](https://i.imgur.com/s44YzeD.png)
+![Imgur](https://i.imgur.com/nFi3wGY.png?1)
+
+* Overall :
+![Imgur](https://i.imgur.com/RuAN24R.png?1)
 
 ## Structure
 
