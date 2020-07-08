@@ -90,13 +90,12 @@ export default class App extends Component {
 
   //reset the Cart
   resetCartHandle = (items, prevState) => {
-    let emptyArr = items.splice(0, items);
 
     this.setState((prevState) => {
       return {
         cartItems: prevState.cartItems - this.state.cartItems,
         price: prevState.price - this.state.price,
-        productList: emptyArr,
+        productList: [],
       };
     });
   };
