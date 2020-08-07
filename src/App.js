@@ -90,7 +90,6 @@ export default class App extends Component {
 
   //reset the Cart
   resetCartHandle = (items, prevState) => {
-
     this.setState((prevState) => {
       return {
         cartItems: prevState.cartItems - this.state.cartItems,
